@@ -14,13 +14,14 @@ const config = {
 		adapter: adapter({
 			pages: 'docs',
 			assets: 'docs',
-			fallback: '200.html'
+			fallback: '404.html',
+			precompress: false,
+			strict: true
 		}),
 		paths: {
-			// base: '/sveltekit-test'
+			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
 		},
 		prerender: {
-			// entries: ['*']
 		}
 	}
 };
